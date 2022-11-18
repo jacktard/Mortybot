@@ -81,6 +81,12 @@ client.on('messageCreate', msg => {
       else if (String(msg.author.username) == "TunasubGG" && (Math.random() <= 0.2)) {
         msg.channel.send("I've lost respect for you fish after reading that.");
       }
+      else if (String(msg.author.username) == "Homeostasis" && (Math.random() <= 0.2)) {
+        msg.channel.send("You look like u eat wheaties everyday for breakfast, muscles ain't gonna save you from me running yo ass over🚬🚬🚬🚬");
+      }
+      else if (String(msg.author.username) == "Homeostasis" && (Math.random() <= 0.2)) {
+        msg.channel.send("Bend over big boy, I like em thicccc");
+      }
       else {
         msg.channel.send(mortyAnswer[Math.floor(Math.random() * mortyAnswer.length)]);
       }
