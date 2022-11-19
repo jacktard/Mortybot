@@ -61,11 +61,17 @@ client.on('messageCreate', msg => {
       if (String(msg.author.username) == "Doja" && String(msg.content).includes("bald")) {
         msg.reply("he’s bald, he’s BALD");
       }
-      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.2)) {
+      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.1)) {
         msg.reply("U beat me whilst fully wbuffed in the retard raid, here's ur reward https://cdn.discordapp.com/attachments/924354712118100018/1008428756223930509/20220803_003826.jpg");
       }
-      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.2)) {
+      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.1)) {
         msg.reply("LOL KEEP BRAGGING ABOUT BEATING AN OFFTANK WHILST U HAD FULL WBUFFS U FUCKING TRASHCAN, I'LL FUCK U LIKE I FUCK YAAA MUM 😛");
+      }
+      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.1)) {
+        msg.reply("I'm gonna depart now tho, got meters to top and bitches to fuck, later trashcan, thanks for making me nut.. i'll venmo u the cash");
+      }
+      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.1)) {
+        msg.reply("LOL, I was wiping my ass with u up to the point where I died, I had DMF and DMT, U HAD FULL WBUFFS TRASHCAN, SIT DOWN");
       }
       else if (String(msg.author.username) == "fatnstrong") {
         if (performance.now() - lastSentMessage > 10000){
