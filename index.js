@@ -64,6 +64,9 @@ client.on('messageCreate', msg => {
       else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.2)) {
         msg.reply("U beat me whilst fully wbuffed in the retard raid, here's ur reward https://cdn.discordapp.com/attachments/924354712118100018/1008428756223930509/20220803_003826.jpg");
       }
+      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.2)) {
+        msg.reply("LOL KEEP BRAGGING ABOUT BEATING AN OFFTANK WHILST U HAD FULL WBUFFS U FUCKING TRASHCAN, I'LL FUCK U LIKE I FUCK YAAA MUM 😛");
+      }
       else if (String(msg.author.username) == "fatnstrong") {
         if (performance.now() - lastSentMessage > 10000){
           msg.channel.send("Go back to doing yoga, u fucking fruit");
