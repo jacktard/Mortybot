@@ -1,7 +1,25 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-var lastSentMessage = performance.now();
+var lastSentMessageTimestamp = performance.now();
+var lastAnswer = "";
+var personalAnswers = {
+  "doja": ["U beat me whilst fully wbuffed in the retard raid, here's ur reward https://cdn.discordapp.com/attachments/924354712118100018/1008428756223930509/20220803_003826.jpg",
+    "LOL KEEP BRAGGING ABOUT BEATING AN OFFTANK WHILST U HAD FULL WBUFFS U FUCKING TRASHCAN, I'LL FUCK U LIKE I FUCK YAAA MUM 😛",
+    "I'm gonna depart now tho, got meters to top and bitches to fuck, later trashcan, thanks for making me nut.. i'll venmo u the cash",
+    "LOL, I was wiping my ass with u up to the point where I died, I had DMF and DMT, U HAD FULL WBUFFS TRASHCAN, SIT DOWN"],
+  "flynn": ["show bald head",
+    "ur actively griefing with ur bald head, go grow sum hair u hairless rat"],
+  "tunasubgg": ["I've lost respect for you fish after reading that.",
+    "Gg fish, ya'll beat a child in a 20 year old body"],
+  "homeostasis": ["You look like u eat wheaties everyday for breakfast, muscles ain't gonna save you from me running yo ass over🚬🚬🚬🚬",
+    "Bend over big boy, I like em thicccc"]
+}
+var keywordsAnswers = {
+  "pasta": 'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
+  "consumes": 'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
+  "bald": 'he’s bald, he’s BALD'
+}
 var mortyAnswer = [
   'Sit down child, go compare our logs, then talk big game pussy',
   'Meters topped, have a shitty night losers',
@@ -10,7 +28,6 @@ var mortyAnswer = [
   'Don\'t worry about nothin\', the hoes been on mah poonstick',
   'I want you all to know I hate this fucking guild, I truly fucking hate this guild, I fucking do, this, I fucking hate every second of this fucking raid tonight. Dogshit bro. Dogshit fucking raid. I hate it. Bro there was so much time to fucking heal me bro. No it\'s not, it\'s fucking garbage bro, it\'s fucking garbage.',
   'Virgin? I\'m too busy getting puuuuuusssssseh, sorry losers',
-  'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
   'Sorry I couldn\'t reply to this gold sooner, too busy sniffing cocaine off this hookers ass',
   'your momma been in mah bed boi, she suckin\' mah toes',
   'Ow you guys don\'t know what a poonstick is right?',
@@ -22,7 +39,7 @@ var mortyAnswer = [
   'Imagine not being able to clear naxx 15 year\'s after it was released xD',
   'Absolute fucking joke, have fun with ur corrupt ass guild pussy',
   'I can\'t help but be upset over this, they literally can\'t clear content without us, but they are gonna drive away the little population they have?? like how about you try and help the guy you shitter, you wana sit there and label half ur guild bad, look in the mirror. now he\'s got nothing to say, typical Deez',
-  '1 day after joining.. I am leaving, I must fulfil my destiny and start my very own pimp club aka "Guild" see you beautiful bastards ion raid.. PASTA4LIFE',
+  '1 day after joining.. I am leaving, I must fulfil my destiny and start my very own pimp club aka "Guild" see you beautiful bastards in raid.. PASTA4LIFE',
   'thanks for the gressil',
   'Are you smoking meth?',
   'i can\'t even fucking raid anymore, fuck this game, fuck you, fuck ur guild, fuck all u losers',
@@ -36,6 +53,38 @@ var mortyAnswer = [
   'Sup fuckers https://cdn.discordapp.com/attachments/924354712118100018/1031295653235675227/20221016_091016.jpg',
   '@Sky come lick my unshaved, unwashed.. covid infested.. BALL SACK, I know thats what this is all about'
 ];
+
+function generate_answer(msg) {
+  // Generate answer different from previous one. Also checks keyword answers and personal answers.
+  var personalAnswerUsed = false;
+  let text = String(msg.content).toLowerCase();
+  let author = String(msg.author.username).toLowerCase();
+  var answer = mortyAnswer[Math.floor(Math.random() * mortyAnswer.length)];
+
+  for (var username in personalAnswers) {
+    if (author === username && (Math.random() <= 0.5)) {
+      answer = personalAnswers[username][Math.floor(Math.random() * personalAnswers[username].length)];
+      personalAnswerUsed = true;
+    }
+  }
+  for (var keyword in keywordsAnswers) {
+    if (text.includes(keyword) && keywordsAnswers[keyword] !== lastAnswer) {
+      answer = keywordsAnswers[keyword]
+      personalAnswerUsed = false;
+    }
+  }
+  while (answer === lastAnswer) {
+    answer = mortyAnswer[Math.floor(Math.random() * mortyAnswer.length)];
+    personalAnswerUsed = false;
+  }
+  lastAnswer = answer;
+  if (personalAnswerUsed == true) {
+    msg.reply(answer);
+  }
+  else {
+    msg.channel.send(answer);
+  }
+}
 
 app.get('/', (req, res) => res.send('morty'));
 
@@ -53,56 +102,23 @@ client.on('ready', () => {
 client.on('messageCreate', msg => {
   if (String(msg).toLowerCase().includes("morty") || String(msg).toLowerCase().includes("morti") || String(msg).toLowerCase().includes("immortaler") || String(msg).includes("980197052816453662")) {
     console.log(msg.author.username);
-    if (performance.now() - lastSentMessage < 3000) {
+    if (performance.now() - lastSentMessageTimestamp < 3000) {
       console.log("spam prevention");
     }
     else {
-      
-      if (String(msg.author.username) == "Doja" && String(msg.content).includes("bald")) {
-        msg.reply("he’s bald, he’s BALD");
-      }
-      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.1)) {
-        msg.reply("U beat me whilst fully wbuffed in the retard raid, here's ur reward https://cdn.discordapp.com/attachments/924354712118100018/1008428756223930509/20220803_003826.jpg");
-      }
-      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.1)) {
-        msg.reply("LOL KEEP BRAGGING ABOUT BEATING AN OFFTANK WHILST U HAD FULL WBUFFS U FUCKING TRASHCAN, I'LL FUCK U LIKE I FUCK YAAA MUM 😛");
-      }
-      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.1)) {
-        msg.reply("I'm gonna depart now tho, got meters to top and bitches to fuck, later trashcan, thanks for making me nut.. i'll venmo u the cash");
-      }
-      else if (String(msg.author.username) == "Doja" && (Math.random() <= 0.1)) {
-        msg.reply("LOL, I was wiping my ass with u up to the point where I died, I had DMF and DMT, U HAD FULL WBUFFS TRASHCAN, SIT DOWN");
-      }
-      else if (String(msg.author.username) == "fatnstrong") {
-        if (performance.now() - lastSentMessage > 10000){
+      if (String(msg.author.username) == "fatnstrong") {
+        if (performance.now() - lastSentMessageTimestamp > 10000) {
           msg.reply("Go back to doing yoga, u fucking fruit");
         }
       }
-      else if (String(msg.author.username) == "flynn" && (Math.random() <= 0.2)) {
-        msg.reply("show bald head");
-      }
-      else if (String(msg.author.username) == "flynn" && (Math.random() <= 0.2)) {
-        msg.reply("ur actively griefing with ur bald head, go grow sum hair u hairless rat");
-      }
-      else if (String(msg.author.username) == "TunasubGG" && (Math.random() <= 0.2)) {
-        msg.reply("Gg fish, ya'll beat a child in a 20 year old body");
-      }
-      else if (String(msg.author.username) == "TunasubGG" && (Math.random() <= 0.2)) {
-        msg.reply("I've lost respect for you fish after reading that.");
-      }
-      else if (String(msg.author.username) == "Homeostasis" && (Math.random() <= 0.2)) {
-        msg.reply("You look like u eat wheaties everyday for breakfast, muscles ain't gonna save you from me running yo ass over🚬🚬🚬🚬");
-      }
-      else if (String(msg.author.username) == "Homeostasis" && (Math.random() <= 0.2)) {
-        msg.reply("Bend over big boy, I like em thicccc");
-      }
       else {
-        msg.channel.send(mortyAnswer[Math.floor(Math.random() * mortyAnswer.length)]);
+        generate_answer(msg);
       }
-      lastSentMessage = performance.now();
+      lastSentMessageTimestamp = performance.now();
     }
   }
 });
+
 client.on('debug', debuglog => {
   console.log(debuglog);
   if (String(debuglog).includes("Hit a 429 while executing a request")) {
