@@ -109,7 +109,7 @@ client.on('messageCreate', msg => {
     else {
       if (String(msg.author.username) == "fatnstrong") {
         if (performance.now() - lastMecoSpamTimestamp > 60000) {
-          msg.reply("Go back to doing yoga, u fucking fruit");
+          //msg.reply("Go back to doing yoga, u fucking fruit");
         }
         else {
           console.log("meco spam prevention");
