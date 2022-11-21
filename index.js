@@ -106,7 +106,7 @@ client.on('messageCreate', msg => {
   if (String(msg).toLowerCase().includes("morty") || String(msg).toLowerCase().includes("morti") || String(msg).toLowerCase().includes("immortaler") || String(msg).includes("980197052816453662")) {
     console.log(msg.author.username + " " + msg.author.id);
     if (msg.member.roles.cache.find(r => r.name === "Guild Member") || msg.member.roles.cache.find(r => r.name === "Guest")) {
-      if (performance.now() - lastSentMessageTimestamp < 3000) {
+      if (performance.now() - lastSentMessageTimestamp < 30000) {
         console.log("spam prevention");
       }
       else {
