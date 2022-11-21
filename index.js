@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 var lastSentMessageTimestamp = performance.now();
+var lastMecoSpamTimestamp = performance.now();
 var lastAnswer = "";
 var personalAnswers = {
   "doja": ["U beat me whilst fully wbuffed in the retard raid, here's ur reward https://cdn.discordapp.com/attachments/924354712118100018/1008428756223930509/20220803_003826.jpg",
@@ -107,13 +108,13 @@ client.on('messageCreate', msg => {
     }
     else {
       if (String(msg.author.username) == "fatnstrong") {
-        if (performance.now() - lastSentMessageTimestamp > 60000) {
+        if (performance.now() - lastMecoSpamTimestamp > 60000) {
           msg.reply("Go back to doing yoga, u fucking fruit");
-          lastSentMessageTimestamp = performance.now();
         }
-        else{
+        else {
           console.log("meco spam prevention");
         }
+        lastMecoSpamTimestamp = performance.now();
       }
       else {
         generate_answer(msg);
