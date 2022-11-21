@@ -109,12 +109,16 @@ client.on('messageCreate', msg => {
       if (String(msg.author.username) == "fatnstrong") {
         if (performance.now() - lastSentMessageTimestamp > 10000) {
           msg.reply("Go back to doing yoga, u fucking fruit");
+          lastSentMessageTimestamp = performance.now();
+        }
+        else{
+          console.log("meco spam prevention");
         }
       }
       else {
         generate_answer(msg);
+        lastSentMessageTimestamp = performance.now();
       }
-      lastSentMessageTimestamp = performance.now();
     }
   }
 });
