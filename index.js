@@ -4,7 +4,7 @@ const port = 3000;
 var lastSentMessageTimestamp = performance.now();
 var lastMecoSpamTimestamp = performance.now();
 var lastAnswer = "";
-var bannedUserIds = ["229085888091652097"]
+var bannedUserIds = ["229085888091652097", "185950410521968640"]
 var personalAnswers = {
   "doja": ["U beat me whilst fully wbuffed in the retard raid, here's ur reward https://cdn.discordapp.com/attachments/924354712118100018/1008428756223930509/20220803_003826.jpg",
     "LOL KEEP BRAGGING ABOUT BEATING AN OFFTANK WHILST U HAD FULL WBUFFS U FUCKING TRASHCAN, I'LL FUCK U LIKE I FUCK YAAA MUM 😛",
