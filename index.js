@@ -18,7 +18,8 @@ var personalAnswers = {
 var keywordsAnswers = {
   "pasta": 'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
   "consumes": 'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
-  "bald": 'he’s bald, he’s BALD'
+  "bald": 'he’s bald, he’s BALD',
+  "deez": 'I can\'t help but be upset over this, they literally can\'t clear content without us, but they are gonna drive away the little population they have?? like how about you try and help the guy you shitter, you wana sit there and label half ur guild bad, look in the mirror. now he\'s got nothing to say, typical Deez'
 }
 var mortyAnswer = [
   'Sit down child, go compare our logs, then talk big game pussy',
@@ -38,7 +39,6 @@ var mortyAnswer = [
   'Those kind of people are the reason I will quit this game soon lmao, try hard Chad\'s that ruin everything',
   'Imagine not being able to clear naxx 15 year\'s after it was released xD',
   'Absolute fucking joke, have fun with ur corrupt ass guild pussy',
-  'I can\'t help but be upset over this, they literally can\'t clear content without us, but they are gonna drive away the little population they have?? like how about you try and help the guy you shitter, you wana sit there and label half ur guild bad, look in the mirror. now he\'s got nothing to say, typical Deez',
   '1 day after joining.. I am leaving, I must fulfil my destiny and start my very own pimp club aka "Guild" see you beautiful bastards in raid.. PASTA4LIFE',
   'thanks for the gressil',
   'Are you smoking meth?',
