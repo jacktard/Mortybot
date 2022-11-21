@@ -4,6 +4,7 @@ const port = 3000;
 var lastSentMessageTimestamp = performance.now();
 var lastMecoSpamTimestamp = performance.now();
 var lastAnswer = "";
+var bannedUserIds = ["229085888091652097"]
 var personalAnswers = {
   "doja": ["U beat me whilst fully wbuffed in the retard raid, here's ur reward https://cdn.discordapp.com/attachments/924354712118100018/1008428756223930509/20220803_003826.jpg",
     "LOL KEEP BRAGGING ABOUT BEATING AN OFFTANK WHILST U HAD FULL WBUFFS U FUCKING TRASHCAN, I'LL FUCK U LIKE I FUCK YAAA MUM 😛",
@@ -102,24 +103,23 @@ client.on('ready', () => {
 
 client.on('messageCreate', msg => {
   if (String(msg).toLowerCase().includes("morty") || String(msg).toLowerCase().includes("morti") || String(msg).toLowerCase().includes("immortaler") || String(msg).includes("980197052816453662")) {
-    console.log(msg.author.username);
-    if (performance.now() - lastSentMessageTimestamp < 3000) {
-      console.log("spam prevention");
-    }
-    else {
-      if (String(msg.author.username) == "fatnstrong") {
-        if (performance.now() - lastMecoSpamTimestamp > 60000) {
-          //msg.reply("Go back to doing yoga, u fucking fruit");
-        }
-        else {
-          console.log("meco spam prevention");
-        }
-        lastMecoSpamTimestamp = performance.now();
+    console.log(msg.author.username + " " + msg.author.id);
+    if (msg.member.roles.cache.find(r => r.name === "Guild Member") || msg.member.roles.cache.find(r => r.name === "Guest")) {
+      if (performance.now() - lastSentMessageTimestamp < 3000) {
+        console.log("spam prevention");
       }
       else {
-        generate_answer(msg);
-        lastSentMessageTimestamp = performance.now();
+        if (bannedUserIds.includes(String(msg.author.id))) {
+          console.log("banned user " + String(msg.author.id) + " " + String(msg.author.username));
+        }
+        else {
+          generate_answer(msg);
+          lastSentMessageTimestamp = performance.now();
+        }
       }
+    }
+    else {
+      console.log("no valid roles " + String(msg.author.id) + " " + String(msg.author.username));
     }
   }
 });
