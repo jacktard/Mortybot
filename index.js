@@ -21,7 +21,8 @@ var keywordsAnswers = {
   "pasta": 'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
   "consumes": 'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
   "bald": 'he’s bald, he’s BALD',
-  "deez": 'I can\'t help but be upset over this, they literally can\'t clear content without us, but they are gonna drive away the little population they have?? like how about you try and help the guy you shitter, you wana sit there and label half ur guild bad, look in the mirror. now he\'s got nothing to say, typical Deez'
+  "deez": 'I can\'t help but be upset over this, they literally can\'t clear content without us, but they are gonna drive away the little population they have?? like how about you try and help the guy you shitter, you wana sit there and label half ur guild bad, look in the mirror. now he\'s got nothing to say, typical Deez',
+  "meco": 'Go do yoga meco'
 }
 var mortyAnswer = [
   'Sit down child, go compare our logs, then talk big game pussy',
