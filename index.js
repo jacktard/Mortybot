@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 var lastSentMessageTimestamp = performance.now();
-var lastMecoSpamTimestamp = performance.now();
 var lastAnswer = "";
+var lastPersonId = "";
 var bannedUserIds = ["229085888091652097", "185950410521968640"]
 var personalAnswers = {
   "doja": ["U beat me whilst fully wbuffed in the retard raid, here's ur reward https://cdn.discordapp.com/attachments/924354712118100018/1008428756223930509/20220803_003826.jpg",
@@ -106,8 +106,11 @@ client.on('messageCreate', msg => {
   if (String(msg).toLowerCase().includes("morty") || String(msg).toLowerCase().includes("morti") || String(msg).toLowerCase().includes("immortaler") || String(msg).includes("980197052816453662")) {
     console.log(msg.author.username + " " + msg.author.id);
     if (msg.member.roles.cache.find(r => r.name === "Guild Member") || msg.member.roles.cache.find(r => r.name === "Guest")) {
-      if (performance.now() - lastSentMessageTimestamp < 30000) {
+      if (performance.now() - lastSentMessageTimestamp < 3000) {
         console.log("spam prevention");
+      }
+      else if (lastPersonId === String(msg.author.id) && performance.now() - lastSentMessageTimestamp < 30000) {
+        console.log("same person spam prevention");
       }
       else {
         if (bannedUserIds.includes(String(msg.author.id))) {
@@ -116,6 +119,7 @@ client.on('messageCreate', msg => {
         else {
           generate_answer(msg);
           lastSentMessageTimestamp = performance.now();
+          lastPersonId = String(msg.author.id);
         }
       }
     }
