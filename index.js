@@ -54,7 +54,8 @@ var mortyAnswer = [
   'Mortybot Living rent free in yo head all night lil boyy',
   'Stop tagging me in this dogshit, I have no association with any of u fuckers',
   'Sup fuckers https://cdn.discordapp.com/attachments/924354712118100018/1031295653235675227/20221016_091016.jpg',
-  '@Sky come lick my unshaved, unwashed.. covid infested.. BALL SACK, I know thats what this is all about'
+  '@Sky come lick my unshaved, unwashed.. covid infested.. BALL SACK, I know thats what this is all about',
+  'I\'m in the process of doxing all u losers, gonna sell all u fuckers out along with David\'s info to the Nigerian government so they can use a ur identities. Fuck you all'
 ];
 
 function generate_answer(msg) {
@@ -105,7 +106,7 @@ client.on('ready', () => {
 client.on('messageCreate', msg => {
   if (String(msg).toLowerCase().includes("morty") || String(msg).toLowerCase().includes("morti") || String(msg).toLowerCase().includes("immortaler") || String(msg).includes("980197052816453662")) {
     console.log(msg.author.username + " " + msg.author.id);
-    if (msg.member.roles.cache.find(r => r.name === "Guild Member") || msg.member.roles.cache.find(r => r.name === "Guest")) {
+    if (msg.guild.name != "Phase 7" || (msg.member.roles.cache.find(r => r.name === "Guild Member") || msg.member.roles.cache.find(r => r.name === "Guest"))) {
       if (performance.now() - lastSentMessageTimestamp < 3000) {
         console.log("spam prevention");
       }
@@ -124,7 +125,7 @@ client.on('messageCreate', msg => {
       }
     }
     else {
-      console.log("no valid roles " + String(msg.author.id) + " " + String(msg.author.username));
+      console.log("no valid roles '"+String(msg.guild.name) + "' " + String(msg.author.id) + " " + String(msg.author.username));
     }
   }
 });
