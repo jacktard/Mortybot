@@ -104,13 +104,13 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', msg => {
-  if (String(msg).toLowerCase().includes("morty") || String(msg).toLowerCase().includes("morti") || String(msg).toLowerCase().includes("immortaler") || String(msg).includes("980197052816453662")) {
+  if (String(msg).toLowerCase().includes("morty") || String(msg).toLowerCase().includes("immortaler") || String(msg).includes("980197052816453662")) {
     console.log(msg.author.username + " " + msg.author.id);
     if (msg.guild.name != "Phase 7" || (msg.member.roles.cache.find(r => r.name === "Guild Member") || msg.member.roles.cache.find(r => r.name === "Guest"))) {
-      if (performance.now() - lastSentMessageTimestamp < 3000) {
+      if (performance.now() - lastSentMessageTimestamp < 2000) {
         console.log("spam prevention");
       }
-      else if (lastPersonId === String(msg.author.id) && performance.now() - lastSentMessageTimestamp < 30000) {
+      else if (lastPersonId === String(msg.author.id) && performance.now() - lastSentMessageTimestamp < 5000) {
         console.log("same person spam prevention");
       }
       else {
