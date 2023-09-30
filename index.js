@@ -24,7 +24,8 @@ var personalAnswers = {
     "Gg fish, ya'll beat a child in a 20 year old body"],
   "homeostasis": ["You look like u eat wheaties everyday for breakfast, muscles ain't gonna save you from me running yo ass over🚬🚬🚬🚬",
     "Bend over big boy, I like em thicccc"],
-  "silly": ["Mid raid, short notice.. ur not happy eh?? Well you can go fuck yourself aswell silly, congrats on the gressil/thc you'll never use you fucking useless waste of space, go take care of ur fucking family and get off the video game. UR NOT HAPPY?? I ALSO DON'T FUCKING CARE GUY. Have fun being deadweight the rest of ur pitiful existence"]
+  "silly": ["Mid raid, short notice.. ur not happy eh?? Well you can go fuck yourself aswell silly, congrats on the gressil/thc you'll never use you fucking useless waste of space, go take care of ur fucking family and get off the video game. UR NOT HAPPY?? I ALSO DON'T FUCKING CARE GUY. Have fun being deadweight the rest of ur pitiful existence"],
+  "sky": ['@Sky come lick my unshaved, unwashed.. covid infested.. BALL SACK, I know thats what this is all about', '@Sky is a literal mangina on arms n legs, grow a pair u fucking pussehhh']
 }
 var keywordsAnswers = {
   "pasta": 'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
@@ -63,7 +64,6 @@ var mortyAnswer = [
   'Mortybot Living rent free in yo head all night lil boyy',
   'Stop tagging me in this dogshit, I have no association with any of u fuckers',
   'Sup fuckers https://cdn.discordapp.com/attachments/924354712118100018/1031295653235675227/20221016_091016.jpg',
-  '@Sky come lick my unshaved, unwashed.. covid infested.. BALL SACK, I know thats what this is all about',
   'I\'m in the process of doxing all u losers, gonna sell all u fuckers out along with David\'s info to the Nigerian government so they can use a ur identities. Fuck you all',
   'The fuck even is a strafe 🤣 ya\'ll a bunch of hoes, making up words n shit',
   'You guys all ruin good things, have fun living ur shitty lives',
@@ -76,7 +76,6 @@ var mortyAnswer = [
   'Ur dad sucked my shaft while ur mum was cradling the balls, come sub in for mommy;))',
   'Meco left sum brain dead mother fuckers in charge... and thats the end of my rant, enjoy pussy boyyy',
   'I\'m boutta go in this dispensary n just stand around for like 20 minutes, so I can give everyone covid',
-  '@Sky is a literal mangina on arms n legs, grow a pair u fucking pussehhh',
   'You got beat by an offtank with the lowest sunders, stay away from mah cheeks son ',
   'Sydposting back on muted, night losers',
   'Sydposting isn\'t fun anymore, just Phase Seven sucking Koja\'s cock, i\'m out losers.. thanks for the laughs',
