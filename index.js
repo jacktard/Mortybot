@@ -1,3 +1,11 @@
+/*
+  To run this on replit, create new replit, import this code,
+  generate new token from https://discord.com/developers/applications and set
+  replit secret MORTYTOKEN to that token.
+  Add mortybot to your server via https://discord.com/oauth2/authorize?client_id=980533763010359436&scope=bot
+  where client_id is your own mortybot discord bot id. 
+*/
+
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -15,7 +23,8 @@ var personalAnswers = {
   "tunasubgg": ["I've lost respect for you fish after reading that.",
     "Gg fish, ya'll beat a child in a 20 year old body"],
   "homeostasis": ["You look like u eat wheaties everyday for breakfast, muscles ain't gonna save you from me running yo ass over🚬🚬🚬🚬",
-    "Bend over big boy, I like em thicccc"]
+    "Bend over big boy, I like em thicccc"],
+  "silly": ["Mid raid, short notice.. ur not happy eh?? Well you can go fuck yourself aswell silly, congrats on the gressil/thc you'll never use you fucking useless waste of space, go take care of ur fucking family and get off the video game. UR NOT HAPPY?? I ALSO DON'T FUCKING CARE GUY. Have fun being deadweight the rest of ur pitiful existence"]
 }
 var keywordsAnswers = {
   "pasta": 'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
@@ -55,7 +64,45 @@ var mortyAnswer = [
   'Stop tagging me in this dogshit, I have no association with any of u fuckers',
   'Sup fuckers https://cdn.discordapp.com/attachments/924354712118100018/1031295653235675227/20221016_091016.jpg',
   '@Sky come lick my unshaved, unwashed.. covid infested.. BALL SACK, I know thats what this is all about',
-  'I\'m in the process of doxing all u losers, gonna sell all u fuckers out along with David\'s info to the Nigerian government so they can use a ur identities. Fuck you all'
+  'I\'m in the process of doxing all u losers, gonna sell all u fuckers out along with David\'s info to the Nigerian government so they can use a ur identities. Fuck you all',
+  'The fuck even is a strafe 🤣 ya\'ll a bunch of hoes, making up words n shit',
+  'You guys all ruin good things, have fun living ur shitty lives',
+  'LIVING IN UR HEAD RENT FREE, GET FUCKED PUSSY BOI',
+  '@The 5th Horseman how do my balls taste big boy?;) ya\'ll been on my cock that much recently ehhh',
+  'Ur mentally bald',
+  'I was butt fucking a dirty african ghetto girl whilst attempting to get the rend.. i was kinda preoccupied',
+  'Still rocking the mangina 2000 bbyy boy ',
+  'Son im 21 years old, I ain\'t gotta be an adult, ya\'ll just keeping making me nut, you just don\'t see to understand',
+  'Ur dad sucked my shaft while ur mum was cradling the balls, come sub in for mommy;))',
+  'Meco left sum brain dead mother fuckers in charge... and thats the end of my rant, enjoy pussy boyyy',
+  'I\'m boutta go in this dispensary n just stand around for like 20 minutes, so I can give everyone covid',
+  '@Sky is a literal mangina on arms n legs, grow a pair u fucking pussehhh',
+  'You got beat by an offtank with the lowest sunders, stay away from mah cheeks son ',
+  'Sydposting back on muted, night losers',
+  'Sydposting isn\'t fun anymore, just Phase Seven sucking Koja\'s cock, i\'m out losers.. thanks for the laughs',
+  'I\'ll be flying First Class to Vegas tomorrow with my hot wife. While you pay for a second spy account just to have all the advantages you can get to make up for your lack of skill. See you around, no skill.',
+  'Morty ain\'t going no where',
+  'Taking CAC to the throat',
+  'I got suspended in grade 6 for saying poon stick infront of the teacher',
+  'Gang gang since potty trained',
+  'Either way, I ain\'t in the wrong, so I could care less about what ya\'ll got to say.. arengar can suck the cock + my hairy unwashed balls, I\'m done rambling.',
+  'Lolol just get ur fucking paladins to buff and there won\'t be an issue, that never would\'ve happened if I didn\'t have to ask 5 fucking times for a buff, I asked when I got back, before golemagg, and 3 times while going from golemagg to majordomo, don\'t invite me to the raid if ur gonna have jack ass mother fuckers who don\'t do their job. Just because I don\'t like you idiots, doesn\'t mean I\'m gonna stop dpsing and topping meters, should be a mutual respect between everyone, obviously I\'m gonna be pretty fucking angry if a member of ur guild is refusing to buff me',
+  'I gotta ejecto seato tf on outta here, duty calls... money to make and bitches to fuck, talk to you in a couple hours scrotum',
+  'Fuck the meme\'s, How can i be mad about C’thun kills that ive barley tried for? Bendria wants the anger for Sydposting, my priest isnt even friendly with Immortaler. I could see after months and months trying for a sydpost wanting to go for it but that isnt the case, i\'m not a whore and I don\'t want to be so yes they posted fuk this guild. But Judas seems more mad about it then i am >.<.',
+  'I\'m so heated rn, Pasta Sauce talks such big game for not even being able to fill a raid with their own guild members',
+  'Ya\'ll are some real salty mother fuckers eh? come taste the axe i\'m right here waiting pussy boi;)',
+  'https://cdn.discordapp.com/attachments/924354712118100018/1106335117884018698/rn_image_picker_lib_temp_bfaac6ef-f2ec-40a4-9734-353ddf9240fc.jpg',
+  'https://cdn.discordapp.com/attachments/924354712118100018/1106346436527927346/20230416_213433.jpg',
+  'https://cdn.discordapp.com/attachments/924354712118100018/1100176827051425802/rn_image_picker_lib_temp_52810b92-b9b7-4f11-8c9a-8c3aafe67758.jpg',
+  'You like my tupé? I\'m actually bald too. https://cdn.discordapp.com/attachments/924354712118100018/1099505131441107054/rn_image_picker_lib_temp_dac6f363-0038-41fa-96ac-81a0c61362da.jpg',
+  'Poppin that collar for you spooge https://cdn.discordapp.com/attachments/924354712118100018/1099434208088297514/rn_image_picker_lib_temp_0b21e774-e3e6-45ae-80f5-572519d42bff.jpg',
+  'I\'ve actually got a little dirt stasche right now.. so its a little off https://cdn.discordapp.com/attachments/924354712118100018/1099422743973335090/rn_image_picker_lib_temp_85ded7d1-19fb-4bcd-a243-413274f65ebe.jpg',
+  'No high blood pressure here https://cdn.discordapp.com/attachments/924354712118100018/1042943521843335178/rn_image_picker_lib_temp_db928da4-75d5-469d-aa41-af36015dc536.jpg',
+  'Twitch payment came innnn https://cdn.discordapp.com/attachments/924354712118100018/1020364182387957820/rn_image_picker_lib_temp_e49c9c35-a6aa-493a-adec-b403a35e9184.jpg',
+  'You think I\'m scared? https://cdn.discordapp.com/attachments/893245644989411340/999003004348936272/Snapchat-1414192136.jpg',
+  'I think u got the wrong gringo, my vape is right here https://cdn.discordapp.com/attachments/924354712118100018/950893805178089482/20220308_181133.jpg',
+  'Had to use a bread heel for my pb sandyyy today.. COPE:copium: https://cdn.discordapp.com/attachments/924354712118100018/1099475771002716243/20230409_171710.jpg',
+  'Good morning https://media.discordapp.net/attachments/1048402581958951035/1088671876374605824/20230323_235159.jpg'
 ];
 
 function generate_answer(msg) {
@@ -125,7 +172,7 @@ client.on('messageCreate', msg => {
       }
     }
     else {
-      console.log("no valid roles '"+String(msg.guild.name) + "' " + String(msg.author.id) + " " + String(msg.author.username));
+      console.log("no valid roles '" + String(msg.guild.name) + "' " + String(msg.author.id) + " " + String(msg.author.username));
     }
   }
 });
