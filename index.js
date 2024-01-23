@@ -32,7 +32,12 @@ var keywordsAnswers = {
   "consumes": 'Free consumes, busy at work and fucking hoes on the daily is the reason I run with pasta gang atm',
   "bald": 'he’s bald, he’s BALD',
   "deez": 'I can\'t help but be upset over this, they literally can\'t clear content without us, but they are gonna drive away the little population they have?? like how about you try and help the guy you shitter, you wana sit there and label half ur guild bad, look in the mirror. now he\'s got nothing to say, typical Deez',
-  "meco": 'Go do yoga meco'
+  "meco": 'Go do yoga meco',
+  "morty /help": "https://cdn.discordapp.com/attachments/918911597039214683/1199409667588231198/morty_help.png?ex=65c2704c&is=65affb4c&hm=add9df52733bed4fd973cc7e99a7f1648ab16d96933f468d4cd8cda9066db84f& \n\n Mortybot is a Discord bot that leverages AI technology to deliver a Morty experience indistinguishable from reality. The following commands are available in this version:\n\n/admin\nOpens the Mortybot admin panel\n\n/comment <number>\nPosts a specific Mortybot comment, where <number> is an integer between 1-76\n\n/image\nPosts a comment that includes an image\n\n/spam <number>\nSpams up to 50 Mortybot comments at once, where <number> is an integer between 1-50\n",
+  "morty /admin": "ERROR: Your Discord account does not have admin rights to Mortybot. Please contact an officer of Phase Seven to request admin access.",
+  "morty /comment": "ERROR: Your Discord account does not have an active Mortybot Nitro™ subscription. To sign up, please visit https://onlyfans.com/moretea",
+  "morty /image": "ERROR: Your Discord account does not have an active Mortybot Nitro™ subscription. To sign up, please visit https://onlyfans.com/moretea",
+  "morty /spam": "ERROR: Your Discord account does not have an active Mortybot Nitro™ subscription. To sign up, please visit https://onlyfans.com/moretea"
 }
 var mortyAnswer = [
   'Sit down child, go compare our logs, then talk big game pussy',
