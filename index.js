@@ -14,7 +14,7 @@ var lastAnswer = "";
 var lastPersonId = "";
 var bannedUserIds = ["229085888091652097", "185950410521968640"]
 var personalAnswers = {
-  "doja": ["U beat me whilst fully wbuffed in the retard raid, here's ur reward https://cdn.discordapp.com/attachments/924354712118100018/1008428756223930509/20220803_003826.jpg",
+  "doja": ["U beat me whilst fully wbuffed in the retard raid, here's ur reward https://media.discordapp.net/attachments/876905329089216573/1195588189126140016/image.png",
     "LOL KEEP BRAGGING ABOUT BEATING AN OFFTANK WHILST U HAD FULL WBUFFS U FUCKING TRASHCAN, I'LL FUCK U LIKE I FUCK YAAA MUM 😛",
     "I'm gonna depart now tho, got meters to top and bitches to fuck, later trashcan, thanks for making me nut.. i'll venmo u the cash",
     "LOL, I was wiping my ass with u up to the point where I died, I had DMF and DMT, U HAD FULL WBUFFS TRASHCAN, SIT DOWN"],
@@ -63,7 +63,7 @@ var mortyAnswer = [
   'You got schooled by a 21 year old, keep crying fuckers, back to work i gooooo🤣',
   'Mortybot Living rent free in yo head all night lil boyy',
   'Stop tagging me in this dogshit, I have no association with any of u fuckers',
-  'Sup fuckers https://cdn.discordapp.com/attachments/924354712118100018/1031295653235675227/20221016_091016.jpg',
+  'Sup fuckers https://cdn.discordapp.com/attachments/876905329089216573/1195516029556772934/20221016_091016.jpg',
   'I\'m in the process of doxing all u losers, gonna sell all u fuckers out along with David\'s info to the Nigerian government so they can use a ur identities. Fuck you all',
   'The fuck even is a strafe 🤣 ya\'ll a bunch of hoes, making up words n shit',
   'You guys all ruin good things, have fun living ur shitty lives',
@@ -90,18 +90,12 @@ var mortyAnswer = [
   'Fuck the meme\'s, How can i be mad about C’thun kills that ive barley tried for? Bendria wants the anger for Sydposting, my priest isnt even friendly with Immortaler. I could see after months and months trying for a sydpost wanting to go for it but that isnt the case, i\'m not a whore and I don\'t want to be so yes they posted fuk this guild. But Judas seems more mad about it then i am >.<.',
   'I\'m so heated rn, Pasta Sauce talks such big game for not even being able to fill a raid with their own guild members',
   'Ya\'ll are some real salty mother fuckers eh? come taste the axe i\'m right here waiting pussy boi;)',
-  'https://cdn.discordapp.com/attachments/924354712118100018/1106335117884018698/rn_image_picker_lib_temp_bfaac6ef-f2ec-40a4-9734-353ddf9240fc.jpg',
-  'https://cdn.discordapp.com/attachments/924354712118100018/1106346436527927346/20230416_213433.jpg',
-  'https://cdn.discordapp.com/attachments/924354712118100018/1100176827051425802/rn_image_picker_lib_temp_52810b92-b9b7-4f11-8c9a-8c3aafe67758.jpg',
-  'You like my tupé? I\'m actually bald too. https://cdn.discordapp.com/attachments/924354712118100018/1099505131441107054/rn_image_picker_lib_temp_dac6f363-0038-41fa-96ac-81a0c61362da.jpg',
-  'Poppin that collar for you spooge https://cdn.discordapp.com/attachments/924354712118100018/1099434208088297514/rn_image_picker_lib_temp_0b21e774-e3e6-45ae-80f5-572519d42bff.jpg',
-  'I\'ve actually got a little dirt stasche right now.. so its a little off https://cdn.discordapp.com/attachments/924354712118100018/1099422743973335090/rn_image_picker_lib_temp_85ded7d1-19fb-4bcd-a243-413274f65ebe.jpg',
-  'No high blood pressure here https://cdn.discordapp.com/attachments/924354712118100018/1042943521843335178/rn_image_picker_lib_temp_db928da4-75d5-469d-aa41-af36015dc536.jpg',
-  'Twitch payment came innnn https://cdn.discordapp.com/attachments/924354712118100018/1020364182387957820/rn_image_picker_lib_temp_e49c9c35-a6aa-493a-adec-b403a35e9184.jpg',
+  'Poppin that collar for you spooge https://cdn.discordapp.com/attachments/876905329089216573/1195515412230717481/image.png',
+  'I\'ve actually got a little dirt stasche right now.. so its a little off https://cdn.discordapp.com/attachments/876905329089216573/1195515633354416208/image.png',
   'You think I\'m scared? https://cdn.discordapp.com/attachments/893245644989411340/999003004348936272/Snapchat-1414192136.jpg',
-  'I think u got the wrong gringo, my vape is right here https://cdn.discordapp.com/attachments/924354712118100018/950893805178089482/20220308_181133.jpg',
-  'Had to use a bread heel for my pb sandyyy today.. COPE:copium: https://cdn.discordapp.com/attachments/924354712118100018/1099475771002716243/20230409_171710.jpg',
-  'Good morning https://media.discordapp.net/attachments/1048402581958951035/1088671876374605824/20230323_235159.jpg'
+  'I think u got the wrong gringo, my vape is right here https://cdn.discordapp.com/attachments/876905329089216573/1195513471643697222/20220308_181133.jpg',
+  'Good morning https://media.discordapp.net/attachments/1048402581958951035/1088671876374605824/20230323_235159.jpg',
+  'ERROR: Your Discord account does not have an active Mortybot Nitro™ subscription. To sign up, please visit https://onlyfans.com/moretea',
 ];
 
 function generate_answer(msg) {
